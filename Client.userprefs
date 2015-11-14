@@ -1,9 +1,8 @@
-﻿<Properties StartupItem="Client/Client.csproj">
+﻿<Properties StartupItem="Client/Client.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Client/Form1.cs">
     <Files>
       <File FileName="Client/Form1.cs" Line="339" Column="23" />
-      <File FileName="../../../../../../Volumes/Data HD/Do/Downloads/stahlfaust/src/newaiplayer/NewAiPlayer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

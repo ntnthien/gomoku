@@ -288,8 +288,9 @@ namespace Client
         private Point Think()
         {
             Point result = board.getRandomFreeCell();
-            String text = result.X + "," + result.Y;
             /*
+            String text = result.X + "," + result.Y;
+            
             string fileName = "C:\\txt\\" + team.Flag.ToString() + ".txt";
 
             using (StreamWriter writer = new StreamWriter(fileName))
@@ -308,17 +309,24 @@ namespace Client
 	        char let = (char)('a' + num);
 	        return let;
         }
-
+			
 		struct Selected_cell {
 			public Point p;
 			public int v;
 		}
 
+
+		// Heuristic function to valuate the Board
 		private int Valuate (GomokuBoard b) {
 			return 1;
 		}
 
+		// Return the cell have max value in list
         private Selected_cell MaxValue(Selected_cell[] a) {
+			if (a.Length == 0) {
+				return new Selected_cell();
+			}
+
             Selected_cell max = a[0];
 
             for (int i = 1; i < a.Length; i++)
@@ -330,8 +338,13 @@ namespace Client
             return max;
         }
 
+		// Return the cell have min value in list
         private Selected_cell MinValue(Selected_cell[] a)
         {
+			if (a.Length == 0) {
+				return new Selected_cell();
+			}
+
             Selected_cell min = a[0];
 
             for (int i = 1; i < a.Length; i++)
@@ -343,10 +356,11 @@ namespace Client
             return min;
         }
 
+		// Return the list of available cell
         private Selected_cell[] Available_cell(GomokuBoard b)
         {
 			Selected_cell[] result = new Selected_cell[20];
-
+				
 			return result;
 		}
 
@@ -421,9 +435,7 @@ namespace Client
             result = MaxValue(list_cell.ToArray());
             return result;
 		}
-
-
-
+			
 
         #endregion Your Work
         #endregion Method
