@@ -1,0 +1,22 @@
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\bin\Release\Client.exe
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\bin\Release\Client.pdb
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\bin\Release\Gomoku.dll
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\bin\Release\Client.exe.config
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\obj\Release\Client.Form1.resources
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\obj\Release\Client.Properties.Resources.resources
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\obj\Release\Client.csproj.GenerateResource.Cache
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\obj\Release\Client.exe
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\obj\Release\Client.pdb
+C:\Users\Minh Anh\Documents\Visual Studio 2013\Projects\Client\Client\obj\Release\Client.csprojResolveAssemblyReference.cache
+C:\Users\Minh Anh\Desktop\Gomoku Project\Client\Client\bin\Release\Client.exe.config
+C:\Users\Minh Anh\Desktop\Gomoku Project\Client\Client\obj\Release\Client.exe
+C:\Users\Minh Anh\Desktop\Gomoku Project\Client\Client\obj\Release\Client.pdb
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Release\Client.exe
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Release\Client.pdb
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\bin\Release\Client.exe
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\bin\Release\Client.pdb
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\bin\Release\Gomoku.dll
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Release\Client.csprojResolveAssemblyReference.cache
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Release\Client.Form1.resources
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Release\Client.Properties.Resources.resources
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Release\Client.csproj.GenerateResource.Cache

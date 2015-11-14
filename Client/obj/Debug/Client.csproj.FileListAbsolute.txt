@@ -1,0 +1,33 @@
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\bin\Debug\Client.exe.config
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\bin\Debug\Client.exe
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\bin\Debug\Client.pdb
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\obj\Debug\Client.Properties.Resources.resources
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\obj\Debug\Client.exe
+c:\users\minh anh\documents\visual studio 2013\Projects\Client\Client\obj\Debug\Client.pdb
+C:\Users\Minh Anh\Documents\visual studio 2013\Projects\Client\Client\obj\Debug\Client.Form1.resources
+D:\Do\AI\Client\Client\obj\Debug\Client.exe
+D:\Do\AI\Client\Client\obj\Debug\Client.pdb
+D:\Do\AI\Client\Client\obj\Debug\ResolveAssemblyReference.cache
+D:\Do\AI\Client\Client\obj\Debug\Client.Form1.resources
+D:\Do\AI\Client\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Do\AI\Client\Client\obj\Debug\GenerateResource.read.1.tlog
+D:\Do\AI\Client\Client\obj\Debug\GenerateResource.write.1.tlog
+D:\Do\AI\Client\Client\bin\Debug\Client.exe
+D:\Do\AI\Client\Client\bin\Debug\Client.pdb
+D:\Do\AI\Client\Client\bin\Debug\Gomoku.dll
+D:\Do\AI\Client\Client\bin\Debug\mscorlib.dll
+D:\Do\AI\Client\Client\bin\Debug\System.Data.dll
+D:\Do\AI\Client\Client\bin\Debug\System.Transactions.dll
+D:\Do\AI\Client\Client\bin\Debug\System.EnterpriseServices.dll
+D:\Do\AI\Client\Client\bin\Debug\System.Web.dll
+D:\Do\AI\Client\Client\bin\Debug\System.Data.OracleClient.dll
+D:\Do\AI\Client\Client\bin\Debug\normidna.nlp
+D:\Do\AI\Client\Client\bin\Debug\normnfc.nlp
+D:\Do\AI\Client\Client\bin\Debug\normnfd.nlp
+D:\Do\AI\Client\Client\bin\Debug\normnfkc.nlp
+D:\Do\AI\Client\Client\bin\Debug\normnfkd.nlp
+D:\Do\AI\Client\Client\bin\Debug\System.EnterpriseServices.Wrapper.dll
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Debug\Client.exe
+C:\Users\Loc Truong\Downloads\Compressed\Client\Client\Client\obj\Debug\Client.pdb
