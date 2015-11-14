@@ -360,10 +360,25 @@ namespace Client
         private List<Selected_cell> Available_cell(GomokuBoard b)
         {
 			List<Selected_cell> result = new List<Selected_cell>();
-				
+
+			for (int i = 0; i < b.Board.GetUpperBound(0); i++) {
+				for (int j = 0; j < b.Board.GetUpperBound(1); j++) {
+					if (b.Board [i, j].IsSelected == false) {
+						Selected_cell cell = new Selected_cell ();
+
+						Point p = new Point ();
+						p.X = i;
+						p.Y = j;
+
+						cell.P = p;
+						result.Add (cell);
+					}
+				}
+			}
 			return result;
 		}
 
+		// Clone a new Gomoku Board
 		private GomokuBoard Clone(GomokuBoard b) {
 			GomokuBoard result = new GomokuBoard ();
 
@@ -372,6 +387,8 @@ namespace Client
 
 			return result;
 		}
+
+
 
 		private Selected_cell Minimax(GomokuBoard b, int depth) {
 			return Max (b, depth);
