@@ -310,9 +310,9 @@ namespace Client
 	        return let;
         }
 			
-		struct Selected_cell {
-			public Point p;
-			public int v;
+		public struct Selected_cell {
+			public Point P { get; set; }
+			public int V { get; set; }
 		}
 
 
@@ -322,16 +322,16 @@ namespace Client
 		}
 
 		// Return the cell have max value in list
-        private Selected_cell MaxValue(Selected_cell[] a) {
-			if (a.Length == 0) {
+        private Selected_cell MaxValue(List<Selected_cell> a) {
+			if (a.Count == 0) {
 				return new Selected_cell();
 			}
 
             Selected_cell max = a[0];
 
-            for (int i = 1; i < a.Length; i++)
+			for (int i = 1; i < a.Count; i++)
             {
-                if (max.v < a[i].v)
+                if (max.V < a[i].V)
                     max = a[i];
             }
 
@@ -339,17 +339,17 @@ namespace Client
         }
 
 		// Return the cell have min value in list
-        private Selected_cell MinValue(Selected_cell[] a)
+        private Selected_cell MinValue(List<Selected_cell> a)
         {
-			if (a.Length == 0) {
+			if (a.Count == 0) {
 				return new Selected_cell();
 			}
 
             Selected_cell min = a[0];
 
-            for (int i = 1; i < a.Length; i++)
+			for (int i = 1; i < a.Count; i++)
             {
-                if (min.v > a[i].v)
+                if (min.V > a[i].V)
                     min = a[i];
             }
 
@@ -357,9 +357,9 @@ namespace Client
         }
 
 		// Return the list of available cell
-        private Selected_cell[] Available_cell(GomokuBoard b)
+        private List<Selected_cell> Available_cell(GomokuBoard b)
         {
-			Selected_cell[] result = new Selected_cell[20];
+			List<Selected_cell> result = new List<Selected_cell>();
 				
 			return result;
 		}
@@ -380,11 +380,12 @@ namespace Client
 		private Selected_cell Max(GomokuBoard b, int depth) 
 		{
 			Selected_cell result;
-			Selected_cell[] a = Available_cell(b);
+			List<Selected_cell> a = Available_cell(b);
 			if (depth == max_depth) {
 
-				for (int i = 0; i < a.Length; i++) {
-					a[i].v = Valuate(b);
+				for (int i = 0; i < a.Count; i++) {
+					Selected_cell cell = a.ElementAt (i);
+					cell.V = Valuate(b);
                     
 				}
                 result = MaxValue(a);
@@ -396,26 +397,26 @@ namespace Client
 			foreach (Selected_cell x in a) {
 				GomokuBoard tmp = Clone(b);
 
-                tmp.select(x.p, this.team.Flag);
+                tmp.select(x.P, this.team.Flag);
 				list_cell.Add(Max(tmp, depth + 1));
 
                 result = Min(tmp, depth + 1);
 			}
-            result = MaxValue(list_cell.ToArray());
+            result = MaxValue(list_cell);
 			return result;
 		}
 
 		private Selected_cell Min(GomokuBoard b, int depth) 
 		{
             Selected_cell result;
-            Selected_cell[] a = Available_cell(b);
+            List<Selected_cell> a = Available_cell(b);
             if (depth == max_depth)
             {
 
-                for (int i = 0; i < a.Length; i++)
+				for (int i = 0; i < a.Count; i++)
                 {
-                    a[i].v = Valuate(b);
-
+					Selected_cell cell = a.ElementAt (i);
+					cell.V = Valuate(b);
                 }
                 result = MaxValue(a);
                 return result;
@@ -427,12 +428,12 @@ namespace Client
             {
                 GomokuBoard tmp = Clone(b);
 
-                tmp.select(x.p, this.team.Flag);
+                tmp.select(x.P, this.team.Flag);
                 list_cell.Add(Max(tmp, depth + 1));
 
                 result = Min(tmp, depth + 1);
             }
-            result = MaxValue(list_cell.ToArray());
+            result = MaxValue(list_cell);
             return result;
 		}
 			
