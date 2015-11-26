@@ -77,8 +77,11 @@ namespace Client
 		/// <param name="e"></param>
 		private void btConnect_Click(object sender, EventArgs e)
 		{
-			client = new TcpClient();
-			IPEndPoint IP_End = new IPEndPoint(IPAddress.Parse(this.txtIP.Text), this.serverPort);
+			client = new TcpClient ();
+			this.txtIP.Text	= "127.0.0.1"; //localhost
+
+			IPEndPoint IP_End = new IPEndPoint(IPAddress.Parse(this.txtIP.Text), this.serverPort); 
+
 
 			try
 			{
@@ -299,12 +302,13 @@ namespace Client
 
 			StopClientThread();
 		}
+
 		#endregion Perform The Turn
 
 		/// Cac em se tien hanh chinh sua code trong region Your Work nay
 		/// Cac region khac khong can chu tam den nhe
 		#region Your Work 
-		int max_depth = 3;
+		int max_depth = 5;
 
 		/// <summary>
 		/// Think
@@ -351,8 +355,10 @@ namespace Client
 				new Point(-1, 0), new Point(1, 1), new Point (-1, -1),
 				new Point (1, -1), new Point(-1, 1)};
 
+
 			foreach (Point P in direction)
 			{
+				int countSimilar = 0;
 				pos = cell.P;
 
 				pos.X += P.X;
@@ -362,6 +368,10 @@ namespace Client
 					&& b.Board[pos.X, pos.Y].Flag == flag)
 				{
 					result++;
+					countSimilar++;
+					if (countSimilar == 5) {
+						return 1000;
+					}
 				}
 			}
 
@@ -457,6 +467,7 @@ namespace Client
 
 				}
 				result = MaxValue(a);
+
 				return result;
 			}
 
