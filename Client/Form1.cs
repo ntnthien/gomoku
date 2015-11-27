@@ -50,6 +50,9 @@ namespace Client
 
 		#endregion Template Message
 
+		System.IO.StreamWriter logFile = new System.IO.StreamWriter(@"client-log.txt");
+
+
 		#region Default Port
 		int serverPort = 8001;
 		#endregion Default Port
@@ -141,6 +144,8 @@ namespace Client
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			StopGame();
+
+
 		}
 		#endregion Form Event
 		#endregion Event
@@ -308,6 +313,7 @@ namespace Client
 		/// Cac em se tien hanh chinh sua code trong region Your Work nay
 		/// Cac region khac khong can chu tam den nhe
 		#region Your Work 
+
 		int max_depth = 5;
 
 		/// <summary>
@@ -423,14 +429,14 @@ namespace Client
 			// TODO: Change into get cells in the radius of 3 cells from lastPos
 			Point lastPos = this.board.Last_Selected_Position;
 
-			for (int i = 0; i < b.Board.GetUpperBound(0); i++) {
-				for (int j = 0; j < b.Board.GetUpperBound(1); j++) {
+			for (int i = 0; i < 10; i++) {
+				for (int j = 0; j < 10; j++) {
 					if (b.Board [i, j].IsSelected == false) {
 						Selected_cell cell = new Selected_cell ();
 
 						Point p = new Point ();
-						p.X = i;
-						p.Y = j;
+						p.X = j;
+						p.Y = i;
 
 						cell.P = p;
 						result.Add (cell);
@@ -460,13 +466,16 @@ namespace Client
 			Selected_cell result;
 			List<Selected_cell> a = Available_cell(b);
 			if (depth == max_depth) {
-
+				String output = "Max_depth: Max: \n";
 				for (int i = 0; i < a.Count; i++) {
 					Selected_cell cell = a.ElementAt (i);
 					cell.V = Valuate(b, cell, this.team.Flag);
 
+					output = output + "["+ cell.P.X + ", " +  cell.P.Y + "]: " + cell.V + "; ";
 				}
 				result = MaxValue(a);
+				output = output + "\nMax value: " + result + "\n\n";
+				logFile.WriteLine(output);
 
 				return result;
 			}
@@ -480,7 +489,7 @@ namespace Client
 				GomokuBoard tmp = Clone(b);
 
 				tmp.select(x.P, this.team.Flag);
-				list_cell.Add(Max(tmp, depth + 1));
+				list_cell.Add(Min(tmp, depth + 1));
 
 				result = Min(tmp, depth + 1);
 			}
@@ -494,6 +503,7 @@ namespace Client
 			List<Selected_cell> a = Available_cell(b);
 			if (depth == max_depth)
 			{
+				String output = "Max_depth: Min: \n";
 				for (int i = 0; i < a.Count; i++)
 				{
 					/* 
@@ -505,8 +515,16 @@ namespace Client
                      */
 					Selected_cell cell = a.ElementAt(i);
 					cell.V = -Valuate(b, cell, getOpponentFlag());
+
+					output = output + "["+ cell.P.X + ", " +  cell.P.Y + "]: " + cell.V + "; ";
+
 				}
+
+
 				result = MaxValue(a);
+				output = output + "\nMax value: " + result + "\n\n";
+				logFile.WriteLine(output);
+
 				return result;
 			}
 
@@ -519,7 +537,7 @@ namespace Client
 				tmp.select(x.P, this.team.Flag);
 				list_cell.Add(Max(tmp, depth + 1));
 
-				result = Min(tmp, depth + 1);
+				result = Max(tmp, depth + 1);
 			}
 			result = MaxValue(list_cell);
 			return result;
